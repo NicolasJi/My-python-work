@@ -47,6 +47,12 @@ def theKey(numList, image):	# 将字符串长度隐藏进图片
 		image.putpixel((0, y), (r, g, b))
 	return None
 
+def errorPrevent(r, g, b):		# 防止像素RGB值超过255出现错误
+	for x in (r, g, b):
+		if x >255:
+			x = x - 10
+	return (r, g, b)
+
 def changeRGB(image, numList, name):	# 将字符串隐藏进图片
 	index = 0
 	num = len(numList)
@@ -70,9 +76,3 @@ def changeRGB(image, numList, name):	# 将字符串隐藏进图片
 				raise inputError('invalid value: %s' % 'only support ascll 0~999')
 			if index == num:
 				return image.save("%s.bmp" % name)
-
-def errorPrevent(r, g, b):		# 防止像素RGB值超过255出现错误
-	for x in (r, g, b):
-		if x >255:
-			x = x - 10
-	return (r, g, b)
