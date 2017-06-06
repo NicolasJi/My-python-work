@@ -1,1 +1,4 @@
-# My-python-work
+# My - Scripts
+  存放我写的一些实现某些小功能的的脚本文件
+  
+##
